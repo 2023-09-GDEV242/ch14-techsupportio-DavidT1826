@@ -14,8 +14,8 @@ import java.util.*;
  * in the HashMap, the corresponding response is returned. If none of the input
  * words is recognized, one of the default responses is randomly chosen.
  * 
- * @author David J. Barnes and Michael Kölling.
- * @version 2016.02.29
+ * @author David Thompson
+ * @version 11/26/2023
  */
 public class Responder
 {
