@@ -125,9 +125,19 @@ public class Responder
         Path path = Paths.get(FILE_OF_DEFAULT_RESPONSES);
         try (BufferedReader reader = Files.newBufferedReader(path, charset)) {
             String response = reader.readLine();
+            System.out.println(response);
+            String nextLine = reader.readLine();
+            System.out.println(nextLine);
             while(response != null) {
-                defaultResponses.add(response);
+                while(nextLine != null && nextLine.length() != 0){
+                    response = response.concat(nextLine);
+                    nextLine = reader.readLine();
+                }
+                if(response.length() != 0){
+                    defaultResponses.add(response);
+                }
                 response = reader.readLine();
+                nextLine = reader.readLine();
             }
         }
         catch(FileNotFoundException e) {
